@@ -1,4 +1,6 @@
-import { works } from "@/data/works";
+import type { CSSProperties } from "react";
+
+import { works } from "../data/works";
 
 const indexedWorks = works.map((work, index) => ({ work, index }));
 
@@ -9,9 +11,18 @@ export default function Works() {
   return (
     <section
       id="works"
-      className="border-b border-white/10 bg-gradient-to-b from-neutral-950 via-neutral-900 to-stone-900 px-6 py-24 sm:px-10 lg:px-16"
+      className="relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-neutral-950 via-neutral-900 to-stone-900 px-6 py-24 sm:px-10 lg:px-16"
     >
-      <div className="mx-auto max-w-7xl">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_18%_24%,rgba(238,166,92,0.075),transparent_34%),radial-gradient(ellipse_at_78%_46%,rgba(168,145,190,0.052),transparent_38%)]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.055] mix-blend-soft-light [background-image:repeating-radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.28)_0,rgba(255,255,255,0.28)_1px,transparent_1px,transparent_7px)]"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-20 grid gap-6 lg:grid-cols-[0.7fr_1fr]">
           <p className="text-sm uppercase tracking-[0.35em] text-neutral-500">
             Selected Works
@@ -59,10 +70,17 @@ type WorkCardProps = {
 
 function WorkCard({ index, work }: WorkCardProps) {
   return (
-    <article className="group relative min-h-[24rem] bg-white/[0.025] p-6 transition duration-500 hover:-translate-y-1 hover:bg-white/[0.045] sm:p-8">
+    <article
+      className="work-card-reveal group relative min-h-[24rem] bg-white/[0.025] p-6 transition duration-500 hover:-translate-y-1 hover:bg-white/[0.045] sm:p-8"
+      style={
+        {
+          "--reveal-start": `${index * 4}%`,
+        } as CSSProperties
+      }
+    >
       <div className="absolute inset-x-0 top-0 h-px bg-white/12 transition duration-500 group-hover:bg-amber-100/25" />
 
-      <div className="flex min-h-[20rem] flex-col justify-between gap-20">
+      <div className="flex min-h-[20rem] flex-col gap-8">
         <div className="flex items-center justify-between gap-6 border-b border-white/10 pb-5">
           <span className="text-sm text-neutral-500">
             {String(index + 1).padStart(2, "0")}
@@ -73,7 +91,16 @@ function WorkCard({ index, work }: WorkCardProps) {
           </span>
         </div>
 
-        <div>
+        <div
+          className="relative aspect-[4/3] overflow-hidden border border-white/10 bg-[radial-gradient(ellipse_at_70%_20%,rgba(238,166,92,0.14),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.018)_35%,rgba(0,0,0,0.28))]"
+          aria-hidden="true"
+        >
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.035),transparent_42%,rgba(0,0,0,0.32))]" />
+          <div className="hero-film-grain absolute inset-0 opacity-[0.12] mix-blend-soft-light" />
+          <div className="absolute inset-x-6 bottom-5 h-px bg-white/10" />
+        </div>
+
+        <div className="mt-1">
           <h3 className="text-2xl font-medium text-neutral-50 transition duration-500 group-hover:text-white">
             {work.title}
           </h3>
@@ -82,7 +109,7 @@ function WorkCard({ index, work }: WorkCardProps) {
             {work.description}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-2">
+          <div className="mt-7 flex flex-wrap gap-2">
             {(work.archiveItems ?? []).map((item) => (
               <span
                 key={item}

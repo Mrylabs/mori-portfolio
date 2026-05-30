@@ -31,3 +31,31 @@ body {
     linear-gradient(90deg, rgba(255,255,255,0.03), transparent 45%, rgba(255,255,255,0.018));
   background-size: 180px 180px, 100% 100%;
 }
+
+@keyframes work-card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(34px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .work-card-reveal {
+    animation: work-card-rise 1s both cubic-bezier(0.22, 1, 0.36, 1);
+    animation-range: entry var(--reveal-start, 0%) cover 34%;
+    animation-timeline: view();
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-card-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
