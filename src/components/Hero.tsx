@@ -1,4 +1,20 @@
+type KamanchehOption = "A" | "B" | "C" | "D" | "E" | "F" | "G";
+
+// Temporary Kamancheh placement prototype.
+// Switch between "A", "B", "C", "D", "E", "F", and "G" here.
+const ACTIVE_KAMANCHEH_OPTION: KamanchehOption = "G";
+
 export default function Hero() {
+  const isOptionA = ACTIVE_KAMANCHEH_OPTION === "A";
+  const isOptionB = ACTIVE_KAMANCHEH_OPTION === "B";
+  const isOptionC = ACTIVE_KAMANCHEH_OPTION === "C";
+  const isOptionD = ACTIVE_KAMANCHEH_OPTION === "D";
+  const isOptionE = ACTIVE_KAMANCHEH_OPTION === "E";
+  const isOptionF = ACTIVE_KAMANCHEH_OPTION === "F";
+  const isOptionG = ACTIVE_KAMANCHEH_OPTION === "G";
+  const isLeftPosterOption = isOptionE || isOptionF || isOptionG;
+  const usesOptionFTypography = isOptionF || isOptionG;
+
   return (
     <section
       id="hero"
@@ -6,13 +22,13 @@ export default function Hero() {
       aria-label="Mori Tahmasebi cinematic portfolio hero"
     >
       <div
-        className="absolute inset-0 z-0 bg-[url('/images/hero/vienna-blue-hour.png')] bg-cover [background-position:center_84%] sm:[background-position:center_69%]"
+        className="absolute inset-0 z-0 bg-[url('/images/hero/vienna-blue-hour.png')] bg-cover [background-position:center_65%] sm:[background-position:center_65%]"
         data-image-layer="vienna-city-photo"
         aria-hidden="true"
       />
 
       <div
-        className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_72%_66%,rgba(238,166,92,0.23)_0%,rgba(238,166,92,0.105)_28%,transparent_52%),radial-gradient(ellipse_at_30%_20%,rgba(168,145,190,0.078)_0%,rgba(168,145,190,0.032)_28%,transparent_56%),linear-gradient(112deg,rgba(8,8,8,0.59)_0%,rgba(9,9,9,0.53)_34%,rgba(13,12,12,0.47)_64%,rgba(7,7,7,0.58)_100%)]"
+        className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_50%_47%,rgba(238,166,92,0.18)_0%,rgba(238,166,92,0.08)_26%,transparent_50%),radial-gradient(ellipse_at_72%_66%,rgba(238,166,92,0.2)_0%,rgba(238,166,92,0.08)_28%,transparent_52%),radial-gradient(ellipse_at_30%_20%,rgba(168,145,190,0.058)_0%,rgba(168,145,190,0.026)_28%,transparent_56%),linear-gradient(112deg,rgba(8,8,8,0.68)_0%,rgba(9,9,9,0.58)_34%,rgba(13,12,12,0.5)_64%,rgba(7,7,7,0.66)_100%)]"
         aria-hidden="true"
       />
 
@@ -22,7 +38,7 @@ export default function Hero() {
       />
 
       <div
-        className="absolute inset-0 z-30 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(8,8,8,0.07)_48%,rgba(5,5,5,0.58)_100%),linear-gradient(to_bottom,rgba(7,7,7,0.5)_0%,rgba(9,8,9,0.11)_32%,rgba(8,7,8,0.6)_100%)]"
+        className="absolute inset-0 z-30 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(8,8,8,0.1)_43%,rgba(5,5,5,0.69)_100%),linear-gradient(to_bottom,rgba(7,7,7,0.62)_0%,rgba(9,8,9,0.12)_32%,rgba(8,7,8,0.72)_100%)]"
         aria-hidden="true"
       />
 
@@ -43,30 +59,173 @@ export default function Hero() {
         </div>
       </nav>
 
-      <div className="relative z-40 mx-auto flex min-h-[calc(100vh-4.75rem)] w-full max-w-7xl flex-col justify-end px-6 pb-8 pt-12 sm:px-10 sm:pb-10 lg:px-16">
+      <div
+        className={`relative z-40 mx-auto flex min-h-[calc(100vh-4.75rem)] w-full max-w-7xl flex-col px-6 pt-12 sm:px-10 lg:px-16 ${
+          isOptionD || isLeftPosterOption
+            ? isLeftPosterOption
+              ? "items-start justify-center pb-10 text-left"
+              : "items-center justify-center pb-10 text-center"
+            : "justify-end pb-8 sm:pb-10"
+        }`}
+      >
         <div
-          className="absolute bottom-[24%] right-[18%] h-9 w-[1px] bg-amber-100/28 shadow-[0_0_28px_rgba(226,151,87,0.38)] sm:bottom-[26%] sm:right-[22%]"
-          aria-hidden="true"
+          className={
+            isOptionD
+              ? "w-full max-w-6xl"
+              : isLeftPosterOption
+                ? "w-full max-w-6xl pl-[clamp(0rem,8vw,7rem)]"
+                : "max-w-6xl"
+          }
         >
-          <span className="absolute -left-[2px] top-0 h-[5px] w-[5px] rounded-full bg-amber-100/65 shadow-[0_0_14px_rgba(255,215,162,0.56)]" />
-          <span className="absolute -bottom-[7px] -left-[7px] h-[7px] w-4 rounded-full bg-[#090807]/70 blur-[2px]" />
-        </div>
-
-        <div className="max-w-6xl">
-          <p className="mb-5 max-w-xs text-[0.68rem] uppercase leading-5 tracking-[0.34em] text-neutral-300/75 sm:max-w-none">
+          <p
+            className={`mb-5 max-w-xs text-[0.68rem] uppercase leading-5 tracking-[0.34em] text-neutral-300/75 sm:max-w-none ${
+              isOptionD
+                ? "mx-auto sm:mb-6"
+                : isLeftPosterOption
+                  ? "sm:mb-6"
+                  : ""
+            }`}
+          >
             Vienna / blue hour
           </p>
-          <h1 className="text-[clamp(4.2rem,13.5vw,12rem)] font-semibold uppercase leading-[0.72] tracking-normal text-neutral-50">
-            <span className="block">Mori</span>
-            <span className="mt-4 block text-[0.49em] font-medium leading-[0.82] text-neutral-200/92 sm:mt-5">
-              Tahmasebi
-            </span>
-          </h1>
+          <div
+            className={
+              isOptionD
+                ? "relative inline-block -translate-x-[clamp(0.25rem,1.6vw,1.25rem)] text-left"
+                : isOptionE
+                  ? "relative inline-block -translate-y-[clamp(2.5rem,5vh,3.75rem)] text-left"
+                : usesOptionFTypography
+                  ? "relative inline-block translate-y-[calc(5rem-clamp(2.5rem,5vh,3.75rem))] text-left"
+                : "relative"
+            }
+          >
+            {/* Option C: clean wordmark with a separate luxury signature mark. */}
+            {isOptionC && (
+              <img
+                src="/images/branding/Kamancheh-i.png"
+                alt=""
+                className="absolute -right-1 top-[10%] h-[1.26em] w-auto opacity-80 drop-shadow-[0_0_14px_rgba(238,166,92,0.28)] sm:right-[8%] sm:top-[7%]"
+                aria-hidden="true"
+              />
+            )}
+
+            <h1
+              className={`font-semibold uppercase text-neutral-50 ${
+                isOptionD
+                  ? "text-[clamp(4.65rem,15vw,13.5rem)] leading-[0.66] tracking-[-0.018em]"
+                  : isOptionE
+                    ? "text-[clamp(3.9rem,11.35vw,10.35rem)] leading-[0.68] tracking-[-0.014em]"
+                    : usesOptionFTypography
+                      ? "text-[clamp(3.6rem,10.45vw,9.55rem)] leading-[0.68] tracking-[-0.014em]"
+                  : "text-[clamp(4.2rem,13.5vw,12rem)] leading-[0.72] tracking-normal"
+              }`}
+            >
+              {/* Option A: Kamancheh replaces the final I in MORI. */}
+              {isOptionA ? (
+                <span className="block">
+                  Mor
+                  <img
+                    src="/images/branding/Kamancheh-i.png"
+                    alt=""
+                    className="ml-[0.01em] inline-block h-[1.1em] w-auto -translate-x-6 translate-y-[calc(0.075em+24px)] align-baseline drop-shadow-[0_0_12px_rgba(238,166,92,0.26)]"
+                    aria-hidden="true"
+                  />
+                </span>
+              ) : (
+                <span
+                  className={
+                    isOptionD
+                      ? "block -translate-x-[7px] text-left"
+                      : isLeftPosterOption
+                        ? "relative block w-fit"
+                      : "block"
+                  }
+                >
+                  Mori
+                  {isOptionE && (
+                    <img
+                      src="/images/branding/Kamancheh-i.png"
+                      alt=""
+                      className="pointer-events-none absolute left-[calc(100%+clamp(2.5rem,4vw,3.75rem))] top-[66%] h-[clamp(8.75rem,24vw,14rem)] w-auto max-w-none -translate-y-1/2 select-none opacity-[0.78] drop-shadow-[0_0_26px_rgba(238,166,92,0.3)] sm:h-[clamp(11rem,19vw,16rem)] lg:h-[clamp(13.75rem,18vw,17.5rem)]"
+                      aria-hidden="true"
+                    />
+                  )}
+                  {isOptionG && (
+                    <img
+                      src="/images/branding/Kamancheh-i.png"
+                      alt=""
+                      className="pointer-events-none absolute left-[calc(100%+0.16em+1.25rem)] top-[58%] h-[clamp(9.75rem,25vw,15.5rem)] w-auto max-w-none -translate-y-1/2 select-none opacity-[0.88] drop-shadow-[0_0_26px_rgba(238,166,92,0.3)] sm:left-[calc(100%+0.18em+1.25rem)] sm:h-[clamp(12.5rem,20vw,18.25rem)] lg:h-[clamp(15.75rem,19.5vw,20rem)]"
+                      aria-hidden="true"
+                    />
+                  )}
+                </span>
+              )}
+
+              {isOptionF && (
+                <img
+                  src="/images/branding/Kamancheh-i.png"
+                  alt=""
+                  className="pointer-events-none absolute left-[calc(100%+clamp(4rem,8vw,7rem))] top-[51%] h-[clamp(8.5rem,22vw,13.5rem)] w-auto max-w-none -translate-y-1/2 select-none opacity-[0.88] drop-shadow-[0_0_26px_rgba(238,166,92,0.3)] sm:h-[clamp(11rem,18vw,16rem)] lg:h-[clamp(13.75rem,17vw,17.5rem)]"
+                  aria-hidden="true"
+                />
+              )}
+
+              {/* Option B/D: the final I in TAHMASEBI owns the Kamancheh alignment. */}
+              <span
+                className={`block font-medium text-neutral-200/92 ${
+                  isOptionD
+                    ? "mt-5 translate-y-0.5 text-[0.48em] leading-[0.76] tracking-[-0.008em] sm:mt-6"
+                    : isOptionE
+                      ? "mt-5 text-[0.57em] leading-[0.78] tracking-[-0.008em] sm:mt-6"
+                      : usesOptionFTypography
+                        ? "mt-5 text-[0.6em] leading-[0.78] tracking-[-0.008em] sm:mt-6"
+                    : "mt-4 text-[0.49em] leading-[0.82] sm:mt-5"
+                }`}
+              >
+                {isOptionB || isOptionD ? (
+                  <>
+                    Tahmaseb
+                    <span className="relative inline-block">
+                      i
+                      <img
+                        src="/images/branding/Kamancheh-i.png"
+                        alt=""
+                        className={
+                          isOptionD
+                            ? "pointer-events-none absolute bottom-[calc(0.82em-1.4375rem)] left-1/2 h-[clamp(7.25rem,31vw,12rem)] w-auto max-w-none -translate-x-1/2 select-none opacity-[0.76] drop-shadow-[0_0_24px_rgba(238,166,92,0.3)] sm:bottom-[calc(0.84em-1.9375rem)] sm:h-[clamp(9rem,25vw,16rem)] lg:h-[clamp(13.75rem,18vw,20rem)]"
+                            : "absolute left-1/2 top-[-0.82em] h-[0.84em] w-auto -translate-x-1/2 opacity-86 drop-shadow-[0_0_10px_rgba(238,166,92,0.24)]"
+                        }
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </>
+                ) : (
+                  "Tahmasebi"
+                )}
+              </span>
+            </h1>
+          </div>
         </div>
 
-        <div className="mt-8 flex flex-col gap-5 pt-5 text-xs uppercase tracking-[0.28em] text-neutral-300/65 sm:flex-row sm:items-end sm:justify-between lg:mt-9">
+        <div
+          className={`flex flex-col gap-5 pt-5 text-xs uppercase tracking-[0.28em] text-neutral-300/65 ${
+            isOptionD || isLeftPosterOption
+              ? isLeftPosterOption
+                ? "mt-10 w-full max-w-5xl pl-[clamp(0rem,8vw,7rem)] sm:mt-12"
+                : "mt-10 w-full max-w-5xl items-center sm:mt-12"
+              : "mt-8 sm:flex-row sm:items-end sm:justify-between lg:mt-9"
+          }`}
+        >
           <p>Cinematic portfolio</p>
-          <p className="max-w-sm leading-5 normal-case tracking-normal text-neutral-300/64 sm:translate-y-3 sm:text-right">
+          <p
+            className={`max-w-sm leading-5 normal-case tracking-normal text-neutral-300/64 ${
+              isOptionD
+                ? "text-center"
+                : isLeftPosterOption
+                  ? "text-left"
+                  : "sm:translate-y-3 sm:text-right"
+            }`}
+          >
             Editorial systems, visual direction, and digital spaces shaped with
             atmosphere, restraint, and strong typographic presence.
           </p>
