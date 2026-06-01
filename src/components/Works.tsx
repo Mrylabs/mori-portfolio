@@ -10,7 +10,7 @@ const featuredWorks = works.filter((work) => work.featured);
 
 function formatTime(value: number) {
   if (!Number.isFinite(value)) {
-    return "0:00";
+    return "--:--";
   }
 
   const minutes = Math.floor(value / 60);
@@ -90,8 +90,9 @@ function WorkCard({
 }: WorkCardProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [duration, setDuration] = useState<number | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isAudioUnavailable, setIsAudioUnavailable] = useState(false);
   const isActive = activeWorkTitle === work.title;
   const isImageFirst = index % 2 === 0;
   const imagePosition =
@@ -100,7 +101,53 @@ function WorkCard({
       : work.title === "Offline"
         ? "center 52%"
         : "center center";
-  const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+  const hasDuration = duration !== null && duration > 0;
+  const progress = hasDuration ? (currentTime / duration) * 100 : 0;
+  const durationLabel = hasDuration ? formatTime(duration) : "--:--";
+
+  const logAudioError = (
+    audio: HTMLAudioElement | null,
+    failedPlayPromise?: unknown,
+  ) => {
+    if (process.env.NODE_ENV !== "development") {
+      return;
+    }
+
+    console.error("[Works audio]", {
+      title: work.title,
+      audioSrc: work.audioSrc,
+      errorCode: audio?.error?.code,
+      errorMessage: audio?.error?.message,
+      failedPlayMessage:
+        failedPlayPromise instanceof Error ? failedPlayPromise.message : undefined,
+      failedPlayPromise,
+    });
+  };
+
+  const markAudioUnavailable = (
+    audio: HTMLAudioElement | null,
+    failedPlayPromise?: unknown,
+  ) => {
+    logAudioError(audio, failedPlayPromise);
+    audio?.pause();
+    setIsAudioUnavailable(true);
+    setIsPlaying(false);
+
+    if (isActive || failedPlayPromise) {
+      setActiveWorkTitle(null);
+    }
+  };
+
+  const updateDuration = (audio: HTMLAudioElement) => {
+    setDuration(Number.isFinite(audio.duration) ? audio.duration : null);
+  };
+
+  const handleAudioLoadStart = () => {
+    setCurrentTime(0);
+    setDuration(null);
+    setIsAudioUnavailable(false);
+    setIsPlaying(false);
+  };
 
   useEffect(() => {
     if (isActive || !audioRef.current) {
@@ -110,6 +157,10 @@ function WorkCard({
     audioRef.current.pause();
     setIsPlaying(false);
   }, [isActive]);
+
+  useEffect(() => {
+    audioRef.current?.load();
+  }, [work.audioSrc]);
 
   const playAudio = async () => {
     const audio = audioRef.current;
@@ -123,8 +174,8 @@ function WorkCard({
     try {
       await audio.play();
       setIsPlaying(true);
-    } catch {
-      setIsPlaying(false);
+    } catch (error) {
+      markAudioUnavailable(audio, error);
     }
   };
 
@@ -144,11 +195,21 @@ function WorkCard({
     void playAudio();
   };
 
+  const loadAudioMetadata = () => {
+    const audio = audioRef.current;
+
+    if (!audio || duration !== null) {
+      return;
+    }
+
+    audio.load();
+  };
+
   const seekAudio = (event: MouseEvent<HTMLButtonElement>) => {
     const audio = audioRef.current;
     const target = event.currentTarget;
 
-    if (!audio || duration <= 0) {
+    if (!audio || !hasDuration) {
       return;
     }
 
@@ -192,22 +253,27 @@ function WorkCard({
         </p>
 
         {work.audioSrc && (
-          <div className="mt-5 max-w-[480px]">
+          <div
+            className="mt-4 max-w-[480px]"
+            onMouseEnter={loadAudioMetadata}
+            onFocus={loadAudioMetadata}
+          >
+            {/* Browser-playable media cannot be fully protected from download. This player only discourages casual downloading. */}
             <audio
               ref={audioRef}
+              controlsList="nodownload"
               preload="metadata"
               src={work.audioSrc}
-              onDurationChange={(event) =>
-                setDuration(event.currentTarget.duration)
-              }
+              onContextMenu={(event) => event.preventDefault()}
+              onDurationChange={(event) => updateDuration(event.currentTarget)}
               onEnded={() => {
                 setCurrentTime(0);
                 setIsPlaying(false);
                 setActiveWorkTitle(null);
               }}
-              onLoadedMetadata={(event) =>
-                setDuration(event.currentTarget.duration)
-              }
+              onLoadStart={handleAudioLoadStart}
+              onLoadedMetadata={(event) => updateDuration(event.currentTarget)}
+              onError={(event) => markAudioUnavailable(event.currentTarget)}
               onPause={() => setIsPlaying(false)}
               onPlay={() => setIsPlaying(true)}
               onTimeUpdate={(event) =>
@@ -215,35 +281,52 @@ function WorkCard({
               }
             />
 
-            <div className="grid grid-cols-[auto_1fr_auto] items-center gap-3 text-[0.6rem] uppercase tracking-[0.17em] text-neutral-600">
-              <button
-                type="button"
-                className="text-left font-light text-neutral-400 transition hover:text-white"
-                onClick={togglePlayback}
-              >
-                {isPlaying ? "Pause" : "▶ Play"}
-              </button>
+            <div className="text-[0.6rem] uppercase tracking-[0.18em] text-neutral-600">
+              <div className="flex items-center justify-between">
+                <button
+                  type="button"
+                  className="flex min-h-7 items-center gap-2 text-left font-light tracking-[0.24em] text-neutral-300 transition hover:text-white"
+                  onClick={togglePlayback}
+                >
+                  <span className="w-4 text-[0.62rem] tracking-normal text-neutral-400">
+                    {isPlaying ? "\u275A\u275A" : "\u25B6"}
+                  </span>
+                  <span>{isPlaying ? "PAUSE" : "LISTEN"}</span>
+                </button>
+              </div>
 
               <button
                 type="button"
-                className="group/progress relative h-4 cursor-pointer"
+                className="group/progress relative ml-6 mt-1 h-6 w-[calc(80%-1.5rem)] cursor-pointer"
                 aria-label={`Seek ${work.title}`}
                 onClick={seekAudio}
               >
-                <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-white/10" />
+                <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-white/15 transition-colors group-hover/progress:bg-white/22" />
                 <span
-                  className="absolute left-0 top-1/2 h-px -translate-y-1/2 bg-neutral-300 transition-[width]"
+                  className="absolute left-0 top-1/2 h-[2px] -translate-y-1/2 bg-neutral-200/75 transition-[width]"
                   style={{ width: `${progress}%` }}
                 />
                 <span
-                  className="absolute top-1/2 size-1 -translate-y-1/2 rounded-full bg-neutral-300 opacity-50 transition-opacity group-hover/progress:opacity-90"
+                  className={`absolute top-1/2 size-1 -translate-y-1/2 rounded-full bg-neutral-200/80 transition-opacity group-hover/progress:opacity-100 ${
+                    isPlaying ? "opacity-85" : "opacity-55"
+                  }`}
                   style={{ left: `calc(${progress}% - 2px)` }}
                 />
               </button>
 
-              <span className="font-light tabular-nums text-neutral-600">
-                {formatTime(currentTime)} / {formatTime(duration)}
-              </span>
+              <div className="-mt-2 ml-6 flex w-[calc(80%-1.5rem)] items-center justify-between font-light tabular-nums tracking-[0.14em] text-neutral-600">
+                <span>{formatTime(currentTime)}</span>
+                <span>{durationLabel}</span>
+              </div>
+
+              {isAudioUnavailable && (
+                <p
+                  className="ml-6 mt-2 text-[0.58rem] font-light normal-case tracking-[0.08em] text-neutral-600"
+                  aria-live="polite"
+                >
+                  Audio preview unavailable.
+                </p>
+              )}
             </div>
           </div>
         )}

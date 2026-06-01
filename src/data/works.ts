@@ -18,7 +18,7 @@ export const works: Work[] = [
       "Created during a period of digital silence, Offline explores distance, absence, and the feeling of being unable to reach the people who matter most.",
     image: "/images/works/offline-cover.png",
     featured: true,
-    audioSrc: "/audio/Offline.mp3",
+    audioSrc: "/audio/offline.mp3",
     archiveItems: [
       "DISTANCE",
       "ABSENCE",
@@ -32,7 +32,7 @@ export const works: Work[] = [
       "A meditation on shadow, stillness, and emotional tension, Dark lingers in the space between presence and absence.",
     image: "/images/works/dark-cover.jpg",
     featured: true,
-    audioSrc: "/audio/Dark - in the woods.mp3",
+    audioSrc: "/audio/dark-in-the-woods.mp3",
     archiveItems: [
       "SHADOW",
       "STILLNESS",
