@@ -3,43 +3,66 @@ export type Work = {
   category: string;
   year?: string;
   description: string;
+  image: string;
+  featured?: boolean;
+  audioSrc?: string;
+  externalUrl?: string;
   archiveItems?: string[];
 };
 
 export const works: Work[] = [
   {
-    title: "Nocturne Study",
-    category: "Music",
+    title: "Offline",
+    category: "Single",
     description:
-      "A selected music work with space for cover imagery, credits, and short editorial context.",
-    archiveItems: ["Light Tests", "Frame Grabs"],
+      "Temporary note for a single shaped around disconnection and quiet pressure.",
+    image: "/images/works/offline-cover.png",
+    featured: true,
+    audioSrc: "/audio/Offline.wav",
+    archiveItems: [
+      "Disconnected Sketches",
+      "Late Mix Notes",
+      "Muted Visual References",
+    ],
   },
   {
-    title: "Still Frame Sequence",
-    category: "Music",
+    title: "Dark",
+    category: "Single",
     description:
-      "A selected music work with visual fragments, process notes, and atmospheric references.",
-    archiveItems: ["Location Notes", "Material References"],
+      "Temporary note for a single with a shadowed, cinematic atmosphere.",
+    image: "/images/works/dark-cover.png",
+    featured: true,
+    audioSrc: "/audio/Dark.wav",
+    archiveItems: [
+      "Low-Light References",
+      "Bass Texture Tests",
+      "Night Session Notes",
+    ],
   },
   {
-    title: "Threshold",
-    category: "Music",
+    title: "Forgotten",
+    category: "Single",
     description:
-      "A selected music work shaped through sound, memory, and cinematic visual language.",
-    archiveItems: ["Process Fragments"],
+      "Temporary note for a single centered on memory, distance, and residue.",
+    image: "/images/works/forgotten-cover.jpeg",
+    featured: true,
+    audioSrc: "/audio/forgotten.mp3",
+    archiveItems: ["Memory Fragments", "Vocal Drafts", "Faded Image Studies"],
   },
   {
-    title: "Rooms Without Weather",
-    category: "Music",
+    title: "Nomade auf Zeit – Trailer",
+    category: "Trailer",
     description:
-      "A selected music work reserved for imagery, credits, and emotional context.",
-    archiveItems: ["Quiet Errors"],
+      "Temporary note for trailer music built around movement and unsettled place.",
+    image: "/images/hero/vienna-blue-hour.png",
+    archiveItems: ["Cue Map", "Travel Textures", "Scene Timing Notes"],
   },
   {
-    title: "Film Music / Score",
-    category: "Film Music",
+    title: "Chi Begam (Mori Remix)",
+    category: "Remix",
     description:
-      "A composition or scoring work connected to moving image, atmosphere, and narrative.",
-    archiveItems: ["Cue Notes", "Scene References"],
+      "Temporary note for a remix reworked through Mori's darker sound palette.",
+    image: "/images/hero/vienna-blue-hour.png",
+    archiveItems: ["Stem Notes", "Rhythm Experiments", "Remix Arrangement Drafts"],
   },
 ];
