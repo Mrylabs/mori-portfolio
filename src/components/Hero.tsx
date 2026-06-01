@@ -78,7 +78,7 @@ export default function Hero() {
           }
         >
           <p
-            className={`mb-5 max-w-xs text-[0.68rem] uppercase leading-5 tracking-[0.34em] text-neutral-300/75 sm:max-w-none ${
+            className={`mb-5 max-w-xs translate-y-2 text-[0.68rem] uppercase leading-5 tracking-[0.34em] text-neutral-300/75 sm:max-w-none ${
               isOptionD
                 ? "mx-auto sm:mb-6"
                 : isLeftPosterOption
@@ -86,7 +86,7 @@ export default function Hero() {
                   : ""
             }`}
           >
-            Vienna / blue hour
+            BASED IN VIENNA
           </p>
           <div
             className={
@@ -141,7 +141,7 @@ export default function Hero() {
                       : "block"
                   }
                 >
-                  Mori
+                  MORI
                   {isOptionE && (
                     <img
                       src="/images/branding/Kamancheh-i.png"
@@ -200,7 +200,7 @@ export default function Hero() {
                     </span>
                   </>
                 ) : (
-                  "Tahmasebi"
+                  "TAHMASEBI"
                 )}
               </span>
             </h1>
@@ -208,17 +208,21 @@ export default function Hero() {
         </div>
 
         <div
-          className={`flex flex-col gap-5 pt-5 text-xs uppercase tracking-[0.28em] text-neutral-300/65 ${
+          className={`flex flex-col gap-4 pt-5 text-xs uppercase tracking-[0.28em] text-neutral-300/65 ${
             isOptionD || isLeftPosterOption
               ? isLeftPosterOption
-                ? "mt-10 w-full max-w-5xl pl-[clamp(0rem,8vw,7rem)] sm:mt-12"
-                : "mt-10 w-full max-w-5xl items-center sm:mt-12"
-              : "mt-8 sm:flex-row sm:items-end sm:justify-between lg:mt-9"
+                ? "mt-12 w-full max-w-5xl pl-[clamp(0rem,8vw,7rem)] sm:mt-14"
+                : "mt-12 w-full max-w-5xl items-center sm:mt-14"
+              : "mt-10 sm:flex-row sm:items-end sm:justify-between lg:mt-12"
           }`}
         >
-          <p>Cinematic portfolio</p>
+          <p>
+            COMPOSER
+            <br />
+            AUDIOVISUAL STORYTELLER
+          </p>
           <p
-            className={`max-w-sm leading-5 normal-case tracking-normal text-neutral-300/64 ${
+            className={`max-w-sm leading-5 normal-case tracking-normal text-neutral-300/56 ${
               isOptionD
                 ? "text-center"
                 : isLeftPosterOption
@@ -226,8 +230,9 @@ export default function Hero() {
                   : "sm:translate-y-3 sm:text-right"
             }`}
           >
-            Editorial systems, visual direction, and digital spaces shaped with
-            atmosphere, restraint, and strong typographic presence.
+            Exploring memory, identity, and belonging
+            <br />
+            through sound and storytelling.
           </p>
         </div>
       </div>

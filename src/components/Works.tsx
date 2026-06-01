@@ -25,32 +25,36 @@ export default function Works() {
   return (
     <section
       id="works"
-      className="relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-neutral-950 via-neutral-900 to-stone-900 px-6 py-20 sm:px-10 lg:px-16"
+      className="relative overflow-hidden border-b border-white/10 bg-[linear-gradient(180deg,#0b0b0a_0%,#11100f_26%,#101115_56%,#171410_100%)] px-6 pb-20 pt-14 sm:px-10 lg:px-16"
     >
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_18%_24%,rgba(238,166,92,0.075),transparent_34%),radial-gradient(ellipse_at_78%_46%,rgba(168,145,190,0.052),transparent_38%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(92,62,35,0.12)_0%,rgba(30,25,22,0.06)_20%,transparent_46%),radial-gradient(ellipse_at_18%_16%,rgba(238,166,92,0.07),transparent_35%),radial-gradient(ellipse_at_78%_42%,rgba(42,55,78,0.09),transparent_42%),radial-gradient(ellipse_at_50%_85%,rgba(24,21,19,0.42),transparent_55%)]"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.055] mix-blend-soft-light [background-image:repeating-radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.28)_0,rgba(255,255,255,0.28)_1px,transparent_1px,transparent_7px)]"
+        className="pointer-events-none absolute inset-0 opacity-[0.04] mix-blend-soft-light [background-image:repeating-radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.32)_0,rgba(255,255,255,0.32)_1px,transparent_1px,transparent_7px)]"
         aria-hidden="true"
       />
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-14 grid gap-5 lg:mb-16 lg:grid-cols-[0.7fr_1fr]">
           <p className="text-sm uppercase tracking-[0.35em] text-neutral-500">
-            Selected Works
+            SELECTED WORKS
           </p>
 
           <div>
             <h2 className="max-w-3xl text-3xl font-light leading-tight text-neutral-50 sm:text-4xl">
-              Music, film score, and visual fragments gathered into one
-              cinematic archive.
+              Stories told through
+              <br />
+              sound, image, and memory.
             </h2>
 
             <p className="mt-5 max-w-2xl text-sm font-light leading-6 text-neutral-400">
-              A curated selection of finished works and quiet process materials:
-              covers, frame grabs, references, notes, and atmospheric traces.
+              Each work begins with a story,
+              <br />
+              then finds its form through sound,
+              <br />
+              image, performance, or collaboration.
             </p>
           </div>
         </div>
@@ -90,6 +94,12 @@ function WorkCard({
   const [isPlaying, setIsPlaying] = useState(false);
   const isActive = activeWorkTitle === work.title;
   const isImageFirst = index % 2 === 0;
+  const imagePosition =
+    work.title === "Dark"
+      ? "center 42%"
+      : work.title === "Offline"
+        ? "center 52%"
+        : "center center";
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   useEffect(() => {
@@ -154,7 +164,7 @@ function WorkCard({
 
   return (
     <article
-      className="work-card-reveal group relative grid gap-5 transition duration-500 hover:-translate-y-0.5 md:grid-cols-[minmax(320px,0.9fr)_minmax(0,1fr)] md:items-center md:gap-10 lg:gap-16"
+      className="work-card-reveal group relative grid justify-center gap-5 transition duration-500 hover:-translate-y-0.5 md:grid-cols-[minmax(360px,520px)_minmax(360px,480px)] md:items-center md:gap-6 lg:gap-8"
       style={
         {
           "--reveal-start": `${index * 4}%`,
@@ -162,7 +172,7 @@ function WorkCard({
       }
     >
       <div
-        className={`relative md:max-w-xl ${
+        className={`relative w-full max-w-[480px] ${
           isImageFirst ? "md:order-2" : "md:order-1"
         }`}
       >
@@ -172,7 +182,7 @@ function WorkCard({
         </div>
 
         <div className="mt-3 max-w-[480px]">
-          <h3 className="text-[1.85rem] font-light leading-none text-neutral-50 transition duration-500 group-hover:text-white sm:text-[2.15rem]">
+          <h3 className="text-[1.85rem] font-normal leading-none text-neutral-50 transition duration-500 group-hover:text-white sm:text-[2.15rem]">
             {work.title}
           </h3>
         </div>
@@ -242,7 +252,7 @@ function WorkCard({
           {(work.archiveItems ?? []).map((item) => (
             <span
               key={item}
-              className="text-[0.56rem] uppercase tracking-[0.16em] text-neutral-600 transition duration-500 group-hover:text-neutral-400"
+              className="text-[0.56rem] uppercase tracking-[0.16em] text-neutral-500/80 transition duration-500 group-hover:text-neutral-400"
             >
               {item}
             </span>
@@ -251,19 +261,18 @@ function WorkCard({
       </div>
 
       <figure
-        className={`relative w-full max-w-[520px] justify-self-center ${
-          isImageFirst
-            ? "md:order-1 md:justify-self-start"
-            : "md:order-2 md:justify-self-end"
+        className={`relative w-full max-w-[520px] justify-self-center lg:w-[520px] ${
+          isImageFirst ? "md:order-1" : "md:order-2"
         }`}
       >
-        <div className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-900 shadow-[0_12px_34px_rgba(0,0,0,0.18)]">
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-900">
           <Image
             src={work.image}
             alt={`${work.title} artwork`}
             fill
             sizes="(min-width: 1024px) 520px, (min-width: 768px) 38vw, calc(100vw - 3rem)"
             className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.025]"
+            style={{ objectPosition: imagePosition }}
           />
           <div
             className="hero-film-grain pointer-events-none absolute inset-0 opacity-[0.075] mix-blend-soft-light"
