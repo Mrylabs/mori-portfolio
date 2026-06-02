@@ -15,7 +15,7 @@ export const works: Work[] = [
     title: "Offline",
     category: "Single",
     description:
-      "Created during a period of digital silence, Offline explores distance, absence, and the feeling of being unable to reach the people who matter most.",
+      "Written during the Iranian internet blackout, Offline reflects on distance, uncertainty, and the feeling of being unable to reach the people who matter most.",
     image: "/images/works/offline-cover.png",
     featured: true,
     audioSrc: "/audio/offline.mp3",
@@ -43,7 +43,7 @@ export const works: Work[] = [
     title: "Forgotten",
     category: "Single",
     description:
-      "Centered on women, memory, and erasure, Forgotten reflects on what remains when personal and collective histories begin to fade.",
+      "Centered on women, memory, and collective experience, Forgotten explores what remains when stories are forgotten, erased, or left untold.",
     image: "/images/works/forgotten-cover.jpg",
     featured: true,
     audioSrc: "/audio/forgotten.mp3",

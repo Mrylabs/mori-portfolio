@@ -25,20 +25,25 @@ export default function About() {
 
             <div className="mt-5 max-w-xl space-y-2.5 text-base font-light leading-7 text-neutral-700 sm:text-[1.05rem] sm:leading-8">
               <p className="text-neutral-900">
-                Morvarid Tahmasebi is an Iranian composer and audiovisual
-                storyteller based in Vienna, creating cinematic sound worlds
-                shaped by memory, identity, and cultural belonging.
+                Morvarid Tahmasebi is a composer and audiovisual storyteller
+                based in Vienna.
               </p>
 
               <p>
-                Her work moves across film, contemporary composition,
-                multimedia performance, and collaborative artistic projects,
-                where sound becomes a way to hold emotion, distance, and the
-                stories that are difficult to express through words.
+                Her work moves between film, contemporary composition, and
+                collaborative artistic projects, creating spaces where sound
+                becomes a vessel for memory, identity, and belonging.
+              </p>
+
+              <p>
+                Whether writing for moving image, performance, or
+                interdisciplinary work, she is drawn to stories that explore
+                distance, connection, and the emotional traces people leave
+                behind.
               </p>
 
               <p className="pt-1.5 text-[0.66rem] font-normal uppercase leading-5 tracking-[0.28em] text-neutral-500/70">
-                COMPOSITION &middot; FILM &middot; PERFORMANCE &middot; KAMANCHEH
+                COMPOSITION &middot; FILM &middot; STORYTELLING &middot; KAMANCHEH
               </p>
             </div>
           </div>

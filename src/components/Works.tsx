@@ -44,15 +44,17 @@ export default function Works() {
 
           <div>
             <h2 className="max-w-3xl text-3xl font-light leading-tight text-neutral-50 sm:text-4xl">
-              Stories told through
+              Stories carried through
               <br />
-              sound, image, and memory.
+              sound, image, and atmosphere.
             </h2>
 
             <p className="mt-5 max-w-2xl text-sm font-light leading-6 text-neutral-400">
-              Each work begins with a story,
+              Each work begins with a question,
               <br />
-              then finds its form through sound,
+              an emotion, or a fragment of experience,
+              <br />
+              then unfolds through sound,
               <br />
               image, performance, or collaboration.
             </p>
