@@ -22,7 +22,7 @@ export default function Hero() {
       aria-label="Mori Tahmasebi cinematic portfolio hero"
     >
       <div
-        className="absolute inset-0 z-0 bg-[url('/images/hero/vienna-blue-hour.png')] bg-cover [background-position:40%_42%] sm:[background-position:center_65%]"
+        className="absolute inset-0 z-0 bg-[url('/images/hero/vienna-blue-hour.webp')] bg-cover [background-position:40%_42%] sm:[background-position:center_65%]"
         data-image-layer="vienna-city-photo"
         aria-hidden="true"
       />
@@ -102,7 +102,7 @@ export default function Hero() {
             {/* Option C: clean wordmark with a separate luxury signature mark. */}
             {isOptionC && (
               <img
-                src="/images/branding/Kamancheh-i.png"
+                src="/images/branding/Kamancheh-i-768.png"
                 alt=""
                 className="absolute -right-1 top-[10%] h-[1.26em] w-auto opacity-80 drop-shadow-[0_0_14px_rgba(201,164,106,0.25)] sm:right-[8%] sm:top-[7%]"
                 aria-hidden="true"
@@ -125,7 +125,7 @@ export default function Hero() {
                 <span className="block">
                   Mor
                   <img
-                    src="/images/branding/Kamancheh-i.png"
+                    src="/images/branding/Kamancheh-i-768.png"
                     alt=""
                     className="ml-[0.01em] inline-block h-[1.1em] w-auto -translate-x-6 translate-y-[calc(0.075em+24px)] align-baseline drop-shadow-[0_0_12px_rgba(201,164,106,0.24)]"
                     aria-hidden="true"
@@ -144,7 +144,7 @@ export default function Hero() {
                   MORI
                   {isOptionE && (
                     <img
-                      src="/images/branding/Kamancheh-i.png"
+                      src="/images/branding/Kamancheh-i-768.png"
                       alt=""
                       className="pointer-events-none absolute left-[calc(100%+clamp(2.5rem,4vw,3.75rem))] top-[66%] h-[clamp(8.75rem,24vw,14rem)] w-auto max-w-none -translate-y-1/2 select-none opacity-[0.78] drop-shadow-[0_0_26px_rgba(201,164,106,0.27)] sm:h-[clamp(11rem,19vw,16rem)] lg:h-[clamp(13.75rem,18vw,17.5rem)]"
                       aria-hidden="true"
@@ -152,7 +152,7 @@ export default function Hero() {
                   )}
                   {isOptionG && (
                     <img
-                      src="/images/branding/Kamancheh-i.png"
+                      src="/images/branding/Kamancheh-i-768.png"
                       alt=""
                       className="pointer-events-none absolute left-[calc(100%-0.04em-17px)] top-[calc(72%-19px)] h-[clamp(7.6rem,21vw,12rem)] w-auto max-w-none -translate-y-1/2 select-none opacity-[0.88] drop-shadow-[0_0_26px_rgba(201,164,106,0.27)] sm:left-[calc(100%+0.18em+1.25rem)] sm:top-[58%] sm:h-[clamp(12.5rem,20vw,18.25rem)] lg:h-[clamp(15.75rem,19.5vw,20rem)]"
                       aria-hidden="true"
@@ -163,7 +163,7 @@ export default function Hero() {
 
               {isOptionF && (
                 <img
-                  src="/images/branding/Kamancheh-i.png"
+                  src="/images/branding/Kamancheh-i-768.png"
                   alt=""
                   className="pointer-events-none absolute left-[calc(100%+clamp(4rem,8vw,7rem))] top-[51%] h-[clamp(8.5rem,22vw,13.5rem)] w-auto max-w-none -translate-y-1/2 select-none opacity-[0.88] drop-shadow-[0_0_26px_rgba(201,164,106,0.27)] sm:h-[clamp(11rem,18vw,16rem)] lg:h-[clamp(13.75rem,17vw,17.5rem)]"
                   aria-hidden="true"
@@ -188,7 +188,7 @@ export default function Hero() {
                     <span className="relative inline-block">
                       i
                       <img
-                        src="/images/branding/Kamancheh-i.png"
+                        src="/images/branding/Kamancheh-i-768.png"
                         alt=""
                         className={
                           isOptionD

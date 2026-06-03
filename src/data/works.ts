@@ -16,7 +16,7 @@ export const works: Work[] = [
     category: "Single",
     description:
       "Written during the Iranian internet blackout, Offline reflects on distance, uncertainty, and the feeling of being unable to reach the people who matter most.",
-    image: "/images/works/offline-cover.png",
+    image: "/images/works/offline-cover.webp",
     featured: true,
     audioSrc: "/audio/offline.mp3",
     archiveItems: [
@@ -58,7 +58,7 @@ export const works: Work[] = [
     category: "Trailer",
     description:
       "A score fragment for drifting landscapes, carrying movement, uncertainty, and the ache of belonging briefly to places already passing.",
-    image: "/images/hero/vienna-blue-hour.png",
+    image: "/images/hero/vienna-blue-hour.webp",
     archiveItems: [
       "Transit Mood Board",
       "Border-Crossing Cue Pages",
@@ -70,7 +70,7 @@ export const works: Work[] = [
     category: "Remix",
     description:
       "A familiar song enters a darker room, reshaped through echo, tension, and the narrative pull of another emotional weather.",
-    image: "/images/hero/vienna-blue-hour.png",
+    image: "/images/hero/vienna-blue-hour.webp",
     archiveItems: [
       "Borrowed Melody Margins",
       "Echo Chamber Pages",
