@@ -115,15 +115,20 @@ function WorkCard({
       return;
     }
 
-    console.error("[Works audio]", {
+    const mediaError = audio?.error;
+    const failedPlayError =
+      failedPlayPromise instanceof Error ? failedPlayPromise : null;
+
+    const details = {
       title: work.title,
-      audioSrc: work.audioSrc,
-      errorCode: audio?.error?.code,
-      errorMessage: audio?.error?.message,
-      failedPlayMessage:
-        failedPlayPromise instanceof Error ? failedPlayPromise.message : undefined,
-      failedPlayPromise,
-    });
+      audioSrc: work.audioSrc ?? "(missing audioSrc)",
+      errorCode: mediaError?.code ?? null,
+      errorMessage: mediaError?.message || failedPlayError?.message || null,
+      currentSrc: audio?.currentSrc || null,
+      failedPlayErrorName: failedPlayError?.name ?? null,
+    };
+
+    console.error("[Works audio]", details);
   };
 
   const markAudioUnavailable = (
