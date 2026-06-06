@@ -30,7 +30,7 @@ export const works: Work[] = [
     year: "2026",
     description:
       "A collaborative performance work shaped by movement, listening, and the shared pulse between sound, body, and presence.",
-    image: "/images/works/what-moves-you-cover.jpg",
+    image: "/images/works/what-moves-you-cover.webp",
     featured: true,
     externalUrl: "https://www.youtube.com/watch?v=rkeWDwbll80",
     actionLabel: "Watch Performance",
@@ -64,7 +64,7 @@ export const works: Work[] = [
     year: "2024",
     description:
       "A familiar song enters a darker room, reshaped through echo, tension, and the narrative pull of another emotional weather.",
-    image: "/images/works/chi-begam-cover.jpg",
+    image: "/images/works/chi-begam-cover.webp",
     featured: false,
     externalUrl: "https://www.youtube.com/watch?v=xJ1EGF5ik14",
     actionLabel: "Watch Video",
@@ -76,7 +76,7 @@ export const works: Work[] = [
     year: "2024",
     description:
       "A meditation on shadow, stillness, and emotional tension, Dark lingers in the space between presence and absence.",
-    image: "/images/works/dark-cover.jpg",
+    image: "/images/works/dark-cover.webp",
     featured: false,
     tags: ["SHADOW", "STILLNESS", "TENSION"],
   },
@@ -86,7 +86,7 @@ export const works: Work[] = [
     year: "2023",
     description:
       "A live performance with another player, drawing from Persian storytelling and the image of the nightingale as a voice of longing, memory, and return.",
-    image: "/images/works/moons-nightingale-cover.jpg",
+    image: "/images/works/moons-nightingale-cover.webp",
     featured: false,
     externalUrl: "https://www.youtube.com/watch?v=NeqYBvV8Pas",
     actionLabel: "Watch Performance",
