@@ -54,7 +54,7 @@ export default function Hero() {
           Mori
         </a>
         <div className="flex items-center gap-6 sm:gap-10">
-          <a className="transition hover:text-[#C9A46A]" href="#works">
+          <a className="transition hover:text-[#C9A46A]" href="/works">
             Work
           </a>
           <a className="transition hover:text-[#C9A46A]" href="#about">
