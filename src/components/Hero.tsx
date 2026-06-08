@@ -21,9 +21,16 @@ export default function Hero() {
       className="relative min-h-screen overflow-hidden bg-[#0b0b0a] text-neutral-100"
       aria-label="Mori Tahmasebi cinematic portfolio hero"
     >
-      <div
-        className="absolute inset-0 z-0 bg-[url('/images/hero/vienna-blue-hour.webp')] bg-cover [background-position:40%_42%] sm:[background-position:center_65%]"
+      <img
+        src="/images/hero/vienna-blue-hour.webp"
+        alt=""
+        className="absolute left-1/2 top-1/2 z-0 h-full w-full -translate-x-1/2 -translate-y-1/2 object-cover object-[40%_42%] sm:left-[52%] sm:top-[40%] sm:h-[122%] sm:w-auto sm:max-w-none sm:object-contain"
         data-image-layer="vienna-city-photo"
+        aria-hidden="true"
+      />
+
+      <div
+        className="pointer-events-none absolute right-[26%] top-[49%] z-[1] h-[2px] w-[3px] rounded-[1px] bg-[#C9A46A] opacity-[0.24] blur-[1px] shadow-[0_0_10px_3px_rgba(201,164,106,0.16)] sm:right-[27%] sm:top-[48%] sm:h-[3px] sm:w-[5px] sm:opacity-[0.22] sm:blur-[1.5px]"
         aria-hidden="true"
       />
 
@@ -46,7 +53,7 @@ export default function Hero() {
         <a href="#hero" className="text-white/78 transition hover:text-[#C9A46A]">
           Mori
         </a>
-        <div className="flex items-center gap-5 sm:gap-8">
+        <div className="flex items-center gap-6 sm:gap-10">
           <a className="transition hover:text-[#C9A46A]" href="#works">
             Work
           </a>
@@ -88,15 +95,16 @@ export default function Hero() {
           >
             BASED IN VIENNA
           </p>
+          {/* isolate keeps Option G's desktop -z layer behind the wordmark text but inside this hero stack. */}
           <div
             className={
               isOptionD
-                ? "relative inline-block -translate-x-[clamp(0.25rem,1.6vw,1.25rem)] text-left"
+                ? "relative isolate inline-block -translate-x-[clamp(0.25rem,1.6vw,1.25rem)] text-left"
                 : isOptionE
-                  ? "relative inline-block -translate-y-[clamp(2.5rem,5vh,3.75rem)] text-left"
+                  ? "relative isolate inline-block -translate-y-[clamp(2.5rem,5vh,3.75rem)] text-left"
                 : usesOptionFTypography
-                  ? "relative inline-block translate-y-[calc(5rem-clamp(2.5rem,5vh,3.75rem))] text-left"
-                : "relative"
+                  ? "relative isolate inline-block translate-y-[calc(5rem-clamp(2.5rem,5vh,3.75rem))] text-left"
+                : "relative isolate"
             }
           >
             {/* Option C: clean wordmark with a separate luxury signature mark. */}
@@ -136,6 +144,9 @@ export default function Hero() {
                   className={
                     isOptionD
                       ? "block -translate-x-[7px] text-left"
+                      : isOptionG
+                        // Mobile remains relative for the original MORI-anchored placement; sm+ releases to the full wordmark wrapper.
+                        ? "relative block w-fit sm:static"
                       : isLeftPosterOption
                         ? "relative block w-fit"
                       : "block"
@@ -154,7 +165,8 @@ export default function Hero() {
                     <img
                       src="/images/branding/Kamancheh-i-768.png"
                       alt=""
-                      className="pointer-events-none absolute left-[calc(100%-0.04em-17px)] top-[calc(72%-19px)] h-[clamp(7.6rem,21vw,12rem)] w-auto max-w-none -translate-y-1/2 select-none opacity-[0.88] drop-shadow-[0_0_26px_rgba(201,164,106,0.27)] sm:left-[calc(100%+0.18em+1.25rem)] sm:top-[58%] sm:h-[clamp(12.5rem,20vw,18.25rem)] lg:h-[clamp(15.75rem,19.5vw,20rem)]"
+                      // Unprefixed classes preserve mobile Option G; sm+ centers a larger, subtle mark behind MORI TAHMASEBI.
+                      className="pointer-events-none absolute left-[calc(100%-0.04em-17px)] top-[calc(72%-19px)] h-[clamp(7.6rem,21vw,12rem)] w-auto max-w-none -translate-y-1/2 select-none opacity-[0.72] brightness-[1.20] drop-shadow-[0_0_22px_rgba(201,164,106,0.2)] sm:left-[calc(50%-300px)] sm:top-[calc(50%+18px)] sm:-z-10 sm:h-[clamp(17.01rem,35.91vw,30.24rem)] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:opacity-[0.46] lg:h-[clamp(22.68rem,32.13vw,35.91rem)]"
                       aria-hidden="true"
                     />
                   )}
@@ -222,7 +234,7 @@ export default function Hero() {
             AUDIOVISUAL STORYTELLER
           </p>
           <p
-            className={`max-w-sm leading-5 normal-case tracking-normal text-neutral-300/56 ${
+            className={`max-w-sm leading-5 normal-case tracking-normal text-neutral-300/64 ${
               isOptionD
                 ? "text-center"
                 : isLeftPosterOption
