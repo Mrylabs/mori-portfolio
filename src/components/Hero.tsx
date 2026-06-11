@@ -166,7 +166,7 @@ export default function Hero() {
                       src="/images/branding/Kamancheh-i-768.png"
                       alt=""
                       // Unprefixed classes preserve mobile Option G; sm+ centers a larger, subtle mark behind MORI TAHMASEBI.
-                      className="pointer-events-none absolute left-[calc(100%-0.04em-17px)] top-[calc(72%-19px)] h-[clamp(7.6rem,21vw,12rem)] w-auto max-w-none -translate-y-1/2 select-none opacity-[0.72] brightness-[1.20] drop-shadow-[0_0_22px_rgba(201,164,106,0.2)] sm:left-[calc(50%-300px)] sm:top-[calc(50%+18px)] sm:-z-10 sm:h-[clamp(17.01rem,35.91vw,30.24rem)] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:opacity-[0.46] lg:h-[clamp(22.68rem,32.13vw,35.91rem)]"
+                      className="pointer-events-none absolute left-[calc(100%-0.04em-17px)] top-[calc(72%-19px)] h-[clamp(7.6rem,21vw,12rem)] w-auto max-w-none -translate-y-1/2 select-none opacity-[0.72] brightness-[1.20] drop-shadow-[0_0_22px_rgba(201,164,106,0.2)] sm:left-[calc(50%-300px)] sm:top-[calc(50%+18px)] sm:-z-10 sm:h-[clamp(15.31rem,32.32vw,27.22rem)] sm:-translate-x-1/2 sm:-translate-y-1/2 sm:opacity-[0.46] sm:drop-shadow-[0_0_22px_rgba(201,164,106,0.17)] lg:h-[clamp(20.41rem,28.92vw,32.32rem)]"
                       aria-hidden="true"
                     />
                   )}
