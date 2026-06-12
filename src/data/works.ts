@@ -49,6 +49,18 @@ export const works: Work[] = [
     tags: ["VOICE", "COLLECTIVE", "PRESENCE"],
   },
   {
+    title: "Offline",
+    category: "Single",
+    year: "2026",
+    description:
+      "Written during the Iranian internet blackout, Offline reflects on distance, absence, and the feeling of being unable to reach the people who matter most.",
+    image: "/images/works/offline-cover.webp",
+    audioSrc: "/audio/Offline.mp3",
+    actionLabel: "Play Track",
+    featured: false,
+    tags: ["DISTANCE", "ABSENCE", "DIGITAL SILENCE"],
+  },
+  {
     title: "Forgotten",
     category: "Single",
     year: "2024",

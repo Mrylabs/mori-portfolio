@@ -146,16 +146,6 @@ export default function WorkCard({
     void playAudio();
   };
 
-  const loadAudioMetadata = () => {
-    const audio = audioRef.current;
-
-    if (!audio || duration !== null) {
-      return;
-    }
-
-    audio.load();
-  };
-
   const seekAudio = (event: MouseEvent<HTMLButtonElement>) => {
     const audio = audioRef.current;
     const target = event.currentTarget;
@@ -226,15 +216,10 @@ export default function WorkCard({
         </p>
 
         {work.audioSrc && (
-          <div
-            className="mt-4 max-w-[480px]"
-            onMouseEnter={loadAudioMetadata}
-            onFocus={loadAudioMetadata}
-          >
+          <div className="mt-4 max-w-[480px]">
             {/* Browser-playable media cannot be fully protected from download. This player only discourages casual downloading. */}
             <audio
               ref={audioRef}
-              controlsList="nodownload"
               preload="metadata"
               src={work.audioSrc}
               onContextMenu={(event) => event.preventDefault()}
