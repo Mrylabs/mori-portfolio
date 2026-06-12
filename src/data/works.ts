@@ -56,6 +56,8 @@ export const works: Work[] = [
       "Centered on women, memory, and collective experience, Forgotten explores what remains when stories are forgotten, erased, or left untold.",
     image: "/images/works/forgotten-cover.jpg",
     featured: false,
+    audioSrc: "/audio/forgotten.mp3",
+    actionLabel: "Play Track",
     tags: ["MEMORY", "WOMEN", "ERASURE"],
   },
   {
@@ -78,6 +80,8 @@ export const works: Work[] = [
       "A meditation on shadow, stillness, and emotional tension, Dark lingers in the space between presence and absence.",
     image: "/images/works/dark-cover.webp",
     featured: false,
+    audioSrc: "/audio/dark-in-the-woods.mp3",
+    actionLabel: "Play Track",
     tags: ["SHADOW", "STILLNESS", "TENSION"],
   },
   {
