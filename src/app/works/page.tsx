@@ -29,12 +29,12 @@ export default function WorksArchivePage() {
         </Link>
 
         <header className="mt-12 border-b border-white/10 pb-10 md:grid md:grid-cols-[0.72fr_1fr] md:gap-10">
-          <p className="text-sm uppercase tracking-[0.35em] text-neutral-500">
-            Archive
-          </p>
+          <div className="md:col-start-2 md:-translate-x-2">
+            <p className="text-sm uppercase tracking-[0.35em] text-neutral-500">
+              Archive
+            </p>
 
-          <div className="mt-5 md:mt-0">
-            <h1 className="text-5xl font-light leading-none text-neutral-50 sm:text-6xl">
+            <h1 className="mt-5 text-5xl font-light leading-none text-neutral-50 sm:text-6xl md:mt-0">
               Works
             </h1>
             <p className="mt-6 max-w-xl text-sm font-light leading-6 text-neutral-400">

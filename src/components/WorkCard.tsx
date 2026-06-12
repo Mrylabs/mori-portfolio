@@ -349,8 +349,12 @@ export default function WorkCard({
                   ? "(min-width: 768px) 132px, calc(100vw - 3rem)"
                   : "(min-width: 1024px) 520px, (min-width: 768px) 38vw, calc(100vw - 3rem)"
               }
-              className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.025]"
+              className="h-full w-full object-cover saturate-[0.9] transition duration-700 group-hover:scale-[1.025]"
               style={{ objectPosition: imagePosition }}
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-black/15"
+              aria-hidden="true"
             />
             <div
               className="hero-film-grain pointer-events-none absolute inset-0 opacity-[0.075] mix-blend-soft-light"

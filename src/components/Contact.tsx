@@ -40,7 +40,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <address className="not-italic text-sm leading-7 text-neutral-400 lg:-translate-y-8">
+        <address className="not-italic text-sm leading-7 text-neutral-400">
           <a
             href="mailto:mori.tahmasbi.info@gmail.com"
             className="block text-neutral-100 underline decoration-white/25 underline-offset-4 transition hover:decoration-[#C9A46A]/60"
@@ -55,6 +55,15 @@ export default function Contact() {
             className="block text-neutral-100 underline decoration-white/25 underline-offset-4 transition hover:decoration-[#C9A46A]/60"
           >
             Instagram
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/morvarid-tahmasebi-201b65280/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-neutral-100 underline decoration-white/25 underline-offset-4 transition hover:decoration-[#C9A46A]/60"
+          >
+            LinkedIn
           </a>
 
           <span className="mt-4 block">Vienna, Austria</span>

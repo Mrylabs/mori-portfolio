@@ -7,18 +7,8 @@ export default function About() {
       className="relative overflow-hidden border-b border-neutral-200/70 bg-[#f4efe7] px-6 pb-9 pt-10 text-neutral-950 sm:px-10 sm:pb-10 sm:pt-12 lg:px-16 lg:pb-14 lg:pt-14"
     >
       <div className="mx-auto grid max-w-6xl gap-9 lg:grid-cols-[minmax(0,0.92fr)_minmax(380px,0.72fr)] lg:gap-12">
-        <div className="max-w-[620px] lg:pt-6">
-          <div className="flex items-center gap-4">
-            <p className="text-[0.84rem] uppercase tracking-[0.36em] text-[#6f918f]">
-              About
-            </p>
-            <span
-              className="h-px w-10 bg-[#6f918f]/45"
-              aria-hidden="true"
-            />
-          </div>
-
-          <div className="lg:ml-12">
+        <div className="max-w-[620px] lg:pt-8">
+          <div className="lg:ml-10">
             <h2 className="mt-4 max-w-xl text-3xl font-medium leading-[1.14] text-neutral-950 sm:text-4xl lg:text-[2.85rem]">
               Sound as a way of remembering.
             </h2>
@@ -26,7 +16,7 @@ export default function About() {
             <div className="mt-5 max-w-xl space-y-2.5 text-base font-light leading-7 text-neutral-700 sm:text-[1.05rem] sm:leading-8">
               <p className="text-neutral-900">
                 Morvarid Tahmasebi is a composer and audiovisual storyteller
-                based in Vienna.
+                based in{"\u00A0"}Vienna.
               </p>
 
               <p>

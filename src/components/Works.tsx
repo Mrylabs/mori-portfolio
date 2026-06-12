@@ -34,11 +34,11 @@ export default function Works() {
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-14 grid gap-5 lg:mb-16 lg:grid-cols-[0.7fr_1fr]">
-          <p className="text-sm uppercase tracking-[0.35em] text-neutral-500">
+          <p className="text-sm uppercase tracking-[0.35em] text-neutral-500 lg:col-start-2">
             SELECTED WORKS
           </p>
 
-          <div>
+          <div className="lg:col-start-2">
             <h2 className="max-w-3xl text-3xl font-light leading-tight text-neutral-50 sm:text-4xl">
               Stories carried through
               <br />
@@ -69,10 +69,10 @@ export default function Works() {
           ))}
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6">
+        <div className="mt-12 grid border-t border-white/10 pt-6 lg:grid-cols-[0.7fr_1fr]">
           <Link
             href="/works"
-            className="inline-flex text-xs uppercase tracking-[0.26em] text-neutral-500 transition hover:text-[#C9A46A]"
+            className="inline-flex text-xs uppercase tracking-[0.26em] text-neutral-500 transition hover:text-[#C9A46A] lg:col-start-2 lg:translate-x-2.5"
           >
             View all works &rarr;
           </Link>
