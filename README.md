@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mori Portfolio
 
-## Getting Started
+A cinematic portfolio website created for composer and audiovisual storyteller **Morvarid (Mori) Tahmasebi**.
 
-First, run the development server:
+The project was developed as a client-style collaboration focused on translating an artist's identity, work, and creative philosophy into a cohesive digital experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Website:** https://mori-portfolio-eta.vercel.app/
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Rather than building a traditional music portfolio, the project evolved into a curated archive of cinematic, audiovisual, and interdisciplinary work.
 
-## Learn More
+Through survey analysis, design exploration, and multiple iterations, the website was shaped around themes of:
 
-To learn more about Next.js, take a look at the following resources:
+* Memory
+* Identity
+* Belonging
+* Storytelling
+* Atmosphere
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The goal was to create an experience that feels closer to an artist archive than a conventional portfolio.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+* Responsive design
+* Curated works archive
+* Audio integration for selected projects
+* Embedded media links
+* Editorial-inspired layout
+* Custom visual treatment and image styling
+* Contact and social links
+* Performance-optimized assets
+* Deployed on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* Vercel
+
+## Key Learnings
+
+This project involved much more than implementation.
+
+Some of the most important challenges included:
+
+* Defining the artist's digital identity
+* Translating abstract creative themes into UI decisions
+* Organizing diverse artistic work into a coherent archive
+* Balancing aesthetics, usability, and performance
+* Iterating through real client feedback
+
+
+## Author
+
+Built by Mehri Tahmasebi
+
+Portfolio: https://execution-dashboard-kappa.vercel.app/

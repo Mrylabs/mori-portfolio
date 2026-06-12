@@ -23,7 +23,7 @@ export default function WorksArchivePage() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <Link
           href="/"
-          className="inline-flex text-xs uppercase tracking-[0.24em] text-neutral-500 transition hover:text-[#C9A46A]"
+          className="relative z-20 inline-flex pointer-events-auto text-xs uppercase tracking-[0.24em] text-neutral-500 transition hover:text-[#C9A46A]"
         >
           &larr; Back home
         </Link>
