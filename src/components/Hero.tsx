@@ -50,8 +50,16 @@ export default function Hero() {
       />
 
       <nav className="relative z-40 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 text-[0.68rem] uppercase tracking-[0.32em] text-white/72 sm:px-10 lg:px-16">
-        <a href="#hero" className="text-white/78 transition hover:text-[#C9A46A]">
-          Mori
+        <a
+          href="#hero"
+          className="inline-flex items-center"
+          aria-label="Morvarid Tahmasebi home"
+        >
+          <img
+            src="/logo/mori-logo-light.svg"
+            alt="Morvarid Tahmasebi"
+            className="h-9 w-auto md:h-10"
+          />
         </a>
         <div className="flex items-center gap-6 sm:gap-10">
           <a className="transition hover:text-[#C9A46A]" href="/works">
