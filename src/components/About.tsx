@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden border-b border-neutral-200/70 bg-[#f4efe7] px-6 pb-9 pt-10 text-neutral-950 sm:px-10 sm:pb-10 sm:pt-12 lg:px-16 lg:pb-14 lg:pt-14"
+      className="relative overflow-hidden border-b border-neutral-200/70 bg-[#f4efe7] px-6 pb-9 pt-10 text-neutral-950 sm:px-10 sm:pb-10 sm:pt-12 lg:px-16 lg:pb-14 lg:pt-6"
     >
       <div className="mx-auto grid max-w-6xl gap-9 lg:grid-cols-[minmax(0,0.92fr)_minmax(380px,0.72fr)] lg:gap-12">
         <div className="max-w-[620px] lg:pt-8">
@@ -47,7 +47,7 @@ export default function About() {
 
           <div className="relative z-10 aspect-[4/5] w-full overflow-hidden bg-[#f8f4ed]">
             <Image
-              src="/images/about/mori.webp"
+              src="/images/about/mori.JPG"
               alt="Portrait of Morvarid Tahmasebi"
               fill
               priority={false}

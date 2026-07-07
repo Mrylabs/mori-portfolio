@@ -21,19 +21,28 @@ export default function Works() {
   return (
     <section
       id="works"
-      className="relative overflow-hidden border-b border-white/10 bg-[linear-gradient(180deg,#0b0b0a_0%,#11100f_26%,#101115_56%,#171410_100%)] px-6 pb-20 pt-14 sm:px-10 lg:px-16"
-    >
+      className="relative overflow-hidden border-b border-white/10 
+      bg-[linear-gradient(
+        180deg,
+        #080706_0%,
+        #090807_10%,
+        #0a0908_22%,
+        #0b0b0a_38%,
+        #11100f_72%,
+        #171410_100%
+      )] px-6 pb-20 pt-10 sm:px-10 lg:px-16"
+          >
       <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(92,62,35,0.12)_0%,rgba(30,25,22,0.06)_20%,transparent_46%),radial-gradient(ellipse_at_18%_16%,rgba(238,166,92,0.07),transparent_35%),radial-gradient(ellipse_at_78%_42%,rgba(42,55,78,0.09),transparent_42%),radial-gradient(ellipse_at_50%_85%,rgba(24,21,19,0.42),transparent_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(8,7,6,0.14)_0%,rgba(17,16,15,0.05)_18%,transparent_46%),radial-gradient(ellipse_at_18%_16%,rgba(201,164,106,0.018),transparent_36%),radial-gradient(ellipse_at_78%_42%,rgba(44,49,58,0.045),transparent_44%),radial-gradient(ellipse_at_50%_86%,rgba(20,18,16,0.26),transparent_58%)]"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.04] mix-blend-soft-light [background-image:repeating-radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.32)_0,rgba(255,255,255,0.32)_1px,transparent_1px,transparent_7px)]"
+        className="pointer-events-none absolute inset-0 opacity-[0.025] mix-blend-soft-light [background-image:repeating-radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.32)_0,rgba(255,255,255,0.32)_1px,transparent_1px,transparent_7px)]"
         aria-hidden="true"
       />
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="mb-14 grid gap-5 lg:mb-16 lg:grid-cols-[0.7fr_1fr]">
+        <div className="mb-12 grid gap-6 lg:mb-14 lg:grid-cols-[0.7fr_1fr]">
           <p className="text-sm uppercase tracking-[0.35em] text-neutral-500 lg:col-start-2">
             SELECTED WORKS
           </p>
@@ -45,14 +54,12 @@ export default function Works() {
               sound, image, and atmosphere.
             </h2>
 
-            <p className="mt-5 max-w-2xl text-sm font-light leading-6 text-neutral-400">
-              Each work begins with a question,
+            <p className="mt-5 max-w-xl text-sm font-light leading-7 text-neutral-400">
+              Each work begins with a question, an emotion,
               <br />
-              an emotion, or a fragment of experience,
+              or a fragment of experience, then unfolds through
               <br />
-              then unfolds through sound,
-              <br />
-              image, performance, or collaboration.
+              sound, image, performance, or collaboration.
             </p>
           </div>
         </div>
