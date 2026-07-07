@@ -47,7 +47,7 @@ export default function About() {
 
           <div className="relative z-10 aspect-[4/5] w-full overflow-hidden bg-[#f8f4ed]">
             <Image
-              src="/images/about/mori.JPG"
+              src="/images/about/mori.webp"
               alt="Portrait of Morvarid Tahmasebi"
               fill
               priority={false}
