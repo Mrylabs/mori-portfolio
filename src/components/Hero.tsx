@@ -35,12 +35,9 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <nav className="relative z-50 mx-auto flex w-full max-w-7xl justify-end px-6 py-8 text-[0.68rem] uppercase tracking-[0.26em] text-white/80 sm:px-10 lg:px-16">
+      <nav className="relative z-50 mx-auto flex w-full max-w-7xl justify-center px-6 py-8 text-[0.68rem] uppercase tracking-[0.26em] text-white/80 md:justify-start lg:justify-end sm:px-10 lg:px-16">
         <div className="flex items-center gap-7 sm:gap-10">
-          <Link
-            href="/works"
-            className="transition hover:text-[#C9A46A]"
-          >
+          <Link href="/works" className="transition hover:text-[#C9A46A]">
             Works
           </Link>
           <a className="transition hover:text-[#C9A46A]" href="#about">
@@ -53,77 +50,121 @@ export default function Hero() {
       </nav>
 
       <div
-        className="relative z-40 mx-auto flex min-h-[calc(100vh-4.75rem)] w-full max-w-7xl flex-col items-center justify-center px-6 pb-[8rem] pt-6 text-left sm:px-10 sm:pb-24 lg:px-16"
+        className="
+            relative z-40 mx-auto
+            flex min-h-[calc(100vh-4.75rem)]
+            w-full max-w-7xl
+            flex-col
+            items-center
+
+            justify-between
+
+            px-6
+            pt-6
+            pb-16
+
+            text-center
+
+            md:pb-20
+
+            lg:justify-center
+            lg:px-16
+            lg:pb-[8rem]
+            lg:text-left
+          "
       >
-        <div className="relative w-full max-w-3xl">
-          <h1 className="flex justify-center -translate-y-18">
+        <div
+          className="
+            relative
+            flex
+            w-full
+            max-w-3xl
+            flex-col
+            items-center
+
+            pt-8
+
+            lg:pt-0
+            lg:items-start
+          "
+        >
+          <h1 className="flex justify-center -translate-y-8 md:-translate-y-10 lg:-translate-y-18">
             <span className="sr-only">Morvarid Tahmasebi</span>
 
             <img
               src="/logo/mori-logo-dark-faded.svg"
               alt=""
               aria-hidden="true"
-              className="h-auto w-[min(72vw,33rem)] max-w-full sm:w-[min(58vw,37rem)] lg:w-[45rem]"
+              className="h-auto w-[88vw] max-w-[34rem] md:w-[70vw] lg:w-[45rem]"
             />
           </h1>
 
-          <div
-            className=" 
-              -mt-40
-              max-w-[30rem]
-            "
-          ></div>
+          <div className="-mt-6 md:-mt-12 lg:-mt-40" />
+
           <p
+            className="
+              text-[1.2rem]
+              font-bold
+              tracking-[0.14em]
+              text-neutral-100/95
+              md:text-[1.1rem]
+              lg:text-[1rem]
+            "
+          >
+            MORVARID TAHMASEBI
+          </p>
+
+          {/* Identity block */}
+          <div className="mt-3 space-y-3 lg:mt-3 lg:space-y-2">
+            <p
               className="
-                text-[1rem]
-                font-bold
-                tracking-[0.14em]
-                text-neutral-100/95
+                text-[0.95rem]
+                md:text-[0.9rem]
+                lg:text-[0.75rem]
+                font-semibold
+                tracking-[0.03em]
+                text-neutral-100/90
               "
             >
-              MORVARID TAHMASEBI
+              Composer · Audiovisual Storyteller
             </p>
 
-            <div className="mt-3 space-y-2">
-
-              <p
-                className="
-                  text-[0.75rem]
-                  font-semibold
-                  tracking-[0.03em]
-                  text-neutral-100/90
-                "
-              >
-                Composer · Audiovisual Storyteller
-              </p>
-
-              <p
-                className="
-                  text-[0.75rem]
-                  uppercase
-                  tracking-[0.22em]
-                  text-neutral-400
-                "
-              >
-                BASED IN VIENNA
-              </p>
-
-              <p
-                className="
-                  mt-3
-                  max-w-2xl
-                  text-sm
-                  font-light
-                  leading-7
-                  text-neutral-300/90
-                "
-              >
-                Creating cinematic sound worlds where memory, identity,
-                and cultural belonging become music.
-              </p>
-
-
+            <p
+              className="
+                text-[0.82rem]
+                md:text-[0.8rem]
+                lg:text-[0.75rem]
+                uppercase
+                tracking-[0.22em]
+                text-neutral-400
+              "
+            >
+              BASED IN VIENNA
+            </p>
           </div>
+
+          {/* Description */}
+          <p
+            className="
+              mt-40
+              max-w-[22rem]
+              text-[1.15rem]
+              font-light
+              leading-8
+              text-neutral-300/90
+
+              md:mt-40
+              md:max-w-[30rem]
+
+              lg:mt-3
+              lg:max-w-2xl
+              lg:text-sm
+              lg:leading-7
+            "
+          >
+            Creating cinematic sound worlds where memory, identity, and cultural
+            belonging become music.
+          </p>
         </div>
       </div>
     </section>
