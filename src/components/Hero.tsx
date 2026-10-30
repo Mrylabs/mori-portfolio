@@ -7,31 +7,13 @@ export default function Hero() {
       className="relative min-h-screen overflow-hidden bg-[#0b0b0a] text-neutral-100"
       aria-label="Mori Tahmasebi cinematic portfolio hero"
     >
-      <img
-        src="/images/hero/vienna-blue-hour.webp"
-        alt=""
-        className="absolute left-1/2 top-1/2 z-0 h-full w-full -translate-x-1/2 -translate-y-1/2 object-cover object-[40%_42%] sm:left-[52%] sm:top-[40%] sm:h-[122%] sm:w-auto sm:max-w-none sm:object-contain"
-        data-image-layer="vienna-city-photo"
+      <div
+        className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_50%_40%,rgba(62,53,49,0.20)_0%,rgba(35,31,29,0.09)_42%,transparent_76%)]"
         aria-hidden="true"
       />
 
       <div
-        className="pointer-events-none absolute right-[26%] top-[49%] z-[1] h-[2px] w-[3px] rounded-[1px] bg-[#C9A46A] opacity-[0.24] blur-[1px] shadow-[0_0_10px_3px_rgba(201,164,106,0.16)] sm:right-[27%] sm:top-[48%] sm:h-[3px] sm:w-[5px] sm:opacity-[0.22] sm:blur-[1.5px]"
-        aria-hidden="true"
-      />
-
-      <div
-        className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_50%_47%,rgba(201,164,106,0.045)_0%,rgba(201,164,106,0.018)_28%,transparent_52%),radial-gradient(ellipse_at_72%_66%,rgba(201,164,106,0.04)_0%,rgba(201,164,106,0.018)_30%,transparent_54%),radial-gradient(ellipse_at_30%_20%,rgba(168,145,190,0.01)_0%,rgba(168,145,190,0.004)_30%,transparent_58%),linear-gradient(112deg,rgba(11,11,10,0.84)_0%,rgba(8,8,8,0.74)_36%,rgba(10,9,8,0.72)_66%,rgba(8,7,6,0.9)_100%)]"
-        aria-hidden="true"
-      />
-
-      <div
-        className="hero-film-grain absolute inset-0 z-20 opacity-[0.16] mix-blend-soft-light"
-        aria-hidden="true"
-      />
-
-      <div
-        className="absolute inset-0 z-30 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(4,4,4,0.18)_42%,rgba(8,7,6,0.78)_74%,rgba(8,7,6,0.98)_100%),linear-gradient(to_bottom,rgba(11,11,10,0.84)_0%,rgba(8,8,8,0.18)_34%,rgba(8,7,6,0.99)_100%)]"
+        className="hero-film-grain pointer-events-none absolute inset-0 z-20 opacity-[0.045] mix-blend-soft-light"
         aria-hidden="true"
       />
 
@@ -75,7 +57,7 @@ export default function Hero() {
       >
         <div
           className="
-            relative
+            hero-entrance relative
             flex
             w-full
             max-w-3xl
